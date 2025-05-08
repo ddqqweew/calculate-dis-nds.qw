@@ -1,0 +1,252 @@
+body {
+  margin: 0;
+  background: #e6f0ea;
+  font-family: 'Poppins', sans-serif;
+  color: #3a5a40;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ad-banner {
+  width: 100%;
+  max-width: 600px;
+  background: #d9ead3;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(58, 90, 64, 0.15);
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+  user-select: none;
+  color: #4a6a4e;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  min-height: 180px;
+}
+
+.ad-banner a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ad-banner img {
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.container {
+  background: #f8fcf7;
+  border-radius: 16px;
+  padding: 30px 40px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(58, 90, 64, 0.15);
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4a6a4e;
+}
+
+/* Основные стили для input[type="number"] */
+input[type="number"] {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 2px solid #c9d6c8;
+  border-radius: 12px;
+  background: #f0f7ed;
+  color: #3a5a40;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  outline-offset: 2px;
+}
+
+/* Подсветка при фокусе */
+input[type="number"]:focus {
+  border-color: #7fb77e;
+  background: #e5f0dc;
+  outline: none;
+  box-shadow: 0 0 8px rgba(127, 183, 126, 0.5);
+}
+
+/* Стили для чекбокса и подписи */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 10px 0;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  user-select: none;
+  color: #4a6a4e;
+}
+
+/* Стили для input[type="checkbox"] внутри .checkbox-label */
+.checkbox-label input[type="checkbox"] {
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  accent-color: #7fb77e;
+  cursor: pointer;
+}
+
+/* Стили для блока НДС */
+#vatLabel {
+  display: block;        /* Важная правка — label блочный */
+  margin-bottom: 15px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+/* Скрытие блока НДС */
+#vatLabel.hidden {
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  height: 0;
+}
+
+/* Стилизуем поле ставки НДС аналогично другим input */
+#vatRate {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 2px solid #c9d6c8;
+  border-radius: 12px;
+  background: #f0f7ed;
+  color: #3a5a40;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  outline-offset: 2px;
+}
+
+/* Подсветка поля ставки НДС при фокусе */
+#vatRate:focus {
+  border-color: #7fb77e;
+  background: #e5f0dc;
+  outline: none;
+  box-shadow: 0 0 8px rgba(127, 183, 126, 0.5);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(127, 183, 126, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  user-select: none;
+  flex: 1 1 auto;
+}
+
+button#calculate {
+  background-color: #7fb77e;
+  margin-right: 15px;
+}
+
+button#calculate:hover {
+  background-color: #6ca167;
+  box-shadow: 0 6px 14px rgba(108, 161, 103, 0.6);
+}
+
+button#reset {
+  background-color: #a5c89f;
+  color: #3a5a40;
+  box-shadow: 0 4px 12px rgba(165, 200, 159, 0.6);
+  flex-shrink: 0;
+  width: 110px;
+}
+
+button#reset:hover {
+  background-color: #91b781;
+  box-shadow: 0 6px 14px rgba(145, 183, 129, 0.8);
+}
+
+#result {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 14px;
+  background-color: #d6e8d4;
+  border: 2px solid #7fb77e;
+  box-shadow: 0 0 8px 2px rgba(127, 183, 126, 0.5);
+  color: #31532d;
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 90px;
+  white-space: pre-line;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#result.error {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 2px solid #b91c22;
+  box-shadow: 0 0 8px 2px rgba(184, 27, 41, 0.6);
+  font-weight: 600;
+}
+
+#historyContainer {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #7fb77e;
+  border-radius: 10px;
+  background: #f0f7ed;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #31532d;
+}
+
+#historyContainer ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#historyContainer li {
+  border-bottom: 1px solid #a3c4a0;
+  padding: 6px 0;
+}
+
+.btn-clear-history {
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background-color: #a5c89f;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #3a5a40;
+}
